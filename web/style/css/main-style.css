@@ -1,0 +1,299 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	margin: 0;
+	line-height: 1.6;
+	color: #fff;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5{
+	margin: 0;
+}
+p{
+	margin: 0;
+}
+
+
+/* CONTAINER */
+
+.container {
+	width: 100%;
+	max-width: 1700px;
+	margin: 0 auto;
+}
+
+
+/* HEADER */
+
+.header{
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	min-height: 70px;
+	background-color: #005ae4;
+	box-shadow: 0 5px 6px #0A3C89;
+}
+.header__inner{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo{
+	cursor: pointer;
+}
+.logo-mini {
+	display: none;
+}
+.burger{
+	display: none;
+	flex-flow: column;
+}
+.burger__line{
+	background-color: #fff;
+	width: 45px;
+	height: 5px;
+	margin-bottom: 10px;
+}
+.burger__line:last-child{
+	margin-bottom: 0;
+}
+.nav__links{
+	display: inline-block;
+	font-size: 24px;
+	font-weight: 400;
+	vertical-align: top;
+	margin-right: 50px;
+	text-decoration: none;
+	color: #fff;
+	transition: color .1s linear;
+}
+.nav__links:last-child{
+	margin-right: 0;
+}
+.nav__links:hover{
+	color: #E7E7E7;
+}
+
+
+/* LOGIN PART */
+
+
+/* FOOTER */
+
+.footer{
+	position: relative;
+	height: 190px;
+	background-color: #0a3c89;
+	z-index: 1000000000;
+}
+.footer__inner{
+	position: relative;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer__center{
+	width: 33%;
+	text-align: center;
+	margin: auto 0;
+}
+.nav__footer{
+	text-align: left;
+	display: flex;
+	flex-flow: column;
+	position: absolute;
+}
+.footer-link{
+	margin-right: 0;
+	margin-bottom: 15px;
+}
+.footer-link:last-child{
+	margin-bottom: 0;
+}
+.copyrite__line{
+	width: 100%;
+	border-bottom: 2px solid #fff;
+}
+.con-footer{
+	height: 100%;
+}
+.footer-left-nav{
+	left: 0;
+}
+.footer-right-nav{
+	right: 0;
+}
+.copyrite__text{
+	font-size: 20px;
+	font-weight: 400;
+	margin-top: 7px;
+}
+.footer__icon{
+	width: 53px;
+	height: 53px;
+	filter: invert(1);
+	cursor: pointer;
+	transition: filter .1s linear;
+
+	border-radius: 5px;
+}
+.footer__icon:hover{
+	filter: invert(1) brightness(70%);
+}
+.footer__icons{
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 77px;
+}
+
+/* @MEDIA */
+
+@media (max-width:1700px){
+	.container{
+		max-width: 1200px;
+	}
+}
+@media (max-width:1200px){
+	.container{
+		max-width: 970px;
+	}
+	.footer__icons{
+		column-gap: 25px;
+	}
+	.login__back{
+		width: 463px;
+		height: 463px;
+	}
+	.login__inner{
+		width: 352px;
+	}
+	.login__title{
+		font-size: 40px;
+		margin-bottom: 20px;
+	}
+	.login__btn{
+		padding: 20px 60px;
+		font-size: 16px;
+	}
+	.login__input{
+		margin-bottom: 55px;
+	}
+}
+@media (max-width:992px){
+	.container{
+		max-width: 750px;
+	}
+	.login__back{
+		width: 463px;
+		height: 463px;
+	}
+	.login__inner{
+		width: 352px;
+	}
+	.login__title{
+		font-size: 40px;
+		margin-bottom: 20px;
+	}
+	.login__btn{
+		padding: 20px 60px;
+		font-size: 16px;
+	}
+	.login__input{
+		margin-bottom: 55px;
+	}
+}
+@media (max-width:767px){
+	.container{
+		max-width: none;
+	}
+	.burger{
+		display: flex;
+		margin-right: 5px;
+	}
+	.logo{
+		display: none;
+	}
+	.logo-mini {
+		display: block;
+		margin-left: 5px;
+	}
+	.nav__footer{
+		display: none;
+	}
+	.header__nav{
+		display: grid;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s linear 0.1s, opacity 0.1s linear;
+		position: absolute;
+		top: 0;
+		margin-top: 70px;
+		width: 100%;
+		text-align: center;
+		grid-template-columns: 1 1 1;
+		background-color: #005ae4;
+		z-index: -10;
+	}
+	.header__nav-active{
+		visibility: visible;
+		opacity: 1;
+		transition-delay: 0s;
+	}
+	.nav__links{
+		margin: 0;
+	}
+	.footer__icon{
+		width: 36px;
+		height: 36px;
+	}
+	.footer__icons {
+		column-gap: 0px;
+	}
+	.footer__center{
+		width: 50%;
+	}
+}
+@media (max-width:360px){
+	.login__back{
+		width: 100%;
+	}
+	.login__title{
+		font-size: 36px;
+	}
+	.login__inner{
+		width: 300px;
+	}
+}

@@ -1,0 +1,93 @@
+http://localhost/files?id=3458fa50-6872-4f2e-8ffd-f71a68e5ce77<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style/css/main-style.css">
+	<link rel="stylesheet" href="style/css/admin.css">
+	<title>MiniCloud - Admin Dashboard</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<img src="style/icons/LOGO.png" alt="" class="logo">
+				<img src="style/icons/LOGO_MINI.png" alt="" class="logo logo-mini">
+
+				<div class="burger" onclick="burgerActive()">
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="nav__part">
+		<div class="container">
+			<div class="nav__part__inner">
+				<h1>Users:</h1>
+				<div class="search">
+					<input type="text" name="search" class="search__input" placeholder="Search">
+					<img src="style/icons/search.svg" alt="" class="search__icon" onclick="focusSearch()">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="users__part">
+		<div class="container">
+			<div class="users__part__inner">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="burger__frame" onclick="hideBurger(event)">
+		<div class="burger__menu">
+			<div class="burger__menu__inner">
+				<div class="profile">
+					<span class="profile__img"></span>
+					<h1>Admin</h1>
+				</div>
+				<div class="bottom__element">
+					<a href="/logout"><img src="style/icons/logout.svg" alt="" class="bottom__element__icon"></a>
+					<img src="style/icons/moon.svg" alt="" class="bottom__element__icon">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="fields__frame" onmousedown=" hideFields(event)">
+		<div class="fields">
+			<div class="fields__inner">
+				<form onsubmit="sendFields(event)" class="fields__form">
+					<input type="text" name="name" class="fields__input" placeholder="Login"><br>
+					<input type="text" name="password" class="fields__input" placeholder="Password"><br>
+					<input id="input-space" type="text" name="space" class="fields__input" placeholder="Storage (Megabytes)"><br>
+					<button type="submit" class="fields__btn">Send</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="fields__frame delete-warn" onmousedown=" hideFields(event)">
+		<div class="fields">
+			<div class="fields__inner">
+				<h2>Are you sure?</h2>
+				<button onclick="deleteUser(id)" class="fields__btn">Yes, sakujo!</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="add__btn__container" onclick="showFields(-1)">
+		<img src="style/icons/plus.svg" alt="" class="add__btn">
+	</div>
+
+	<script src="style/js/dashboard.js" defer></script>
+	<script src="style/js/admin.js" defer></script>
+</body>
+</html>

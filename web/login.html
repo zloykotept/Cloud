@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style/css/main-style.css">
+	<link rel="stylesheet" href="style/css/login.css">
+	<title>MiniCloud - Login</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<img src="style/icons/LOGO.png" alt="" class="logo">
+				<img src="style/icons/LOGO_MINI.png" alt="" class="logo logo-mini">
+
+				<nav class="header__nav">
+					<a href="#" class="nav__links">Home</a>
+					<a href="https://t.me/ZloyKot228" class="nav__links">Support</a>
+					<a href="https://t.me/ZloyKot228" class="nav__links">Info</a>
+				</nav>
+				
+				<div class="burger" onclick="burgerActive()">
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="loginPart">
+		<div class="container">
+			<div class="login">
+				<div class="login__back">
+					<div class="login__inner">
+						<h1 class="login__title">Log in</h1>
+						<form onsubmit="sendLogin(event)" class="login__form">
+							<input type="text" name="login" class="login__input" placeholder="Login"><br>
+							<input type="password" name="password" class="login__input input-pass" placeholder="Password">
+							<img src="style/icons/eye-hide.svg" alt="" class="pass-icon" onclick="setIcon()"><br>
+							<button type="submit" class="login__btn">submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container con-footer">
+			<div class="footer__inner">
+				<nav class="nav__footer footer-left-nav">
+					<a href="index.php" class="nav__links footer-link">Home</a>
+					<a href="https://t.me/ZloyKot228" class="nav__links footer-link">Support</a>
+					<a href="https://t.me/ZloyKot228" class="nav__links footer-link">Info</a>
+				</nav>
+
+				<div class="footer__center">
+					<div class="footer__icons">
+						<a href="https://t.me/ZloyKot228"><img src="style/icons/telegram.svg" alt="" class="footer__icon"></a>
+						<a href="https://t.me/ZloyKot228"><img src="style/icons/facebook.svg" alt="" class="footer__icon"></a>
+						<a href="https://t.me/ZloyKot228"><img src="style/icons/instagrm.svg" alt="" class="footer__icon"></a>
+					</div>
+					<div class="footer__copyrite">
+						<div class="copyrite__line"></div>
+						<h2 class="copyrite__text">© “MiniCloud”. ZloyKot, 2024</h2>
+					</div>
+				</div>
+
+				<nav class="nav__footer footer-right-nav">
+					<a href="https://t.me/ZloyKot228" class="nav__links footer-link">Telegram</a>
+					<a href="https://t.me/ZloyKot228" class="nav__links footer-link">Facebook</a>
+					<a href="https://t.me/ZloyKot228" class="nav__links footer-link">Instagram</a>
+				</nav>
+			</div>
+		</div>
+	</footer>
+
+	<script src="style/js/index.js" defer></script>
+</body>
+</html>

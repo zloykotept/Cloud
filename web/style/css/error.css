@@ -1,0 +1,29 @@
+body {
+	background-image: url('../img/background.png');
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.error__inner {
+	text-align: center;
+	color: #2e7bf0;
+	font-weight: bold;
+	line-height: 1;
+}
+
+.con-error {
+	height: calc(100% - 70px);
+	margin-top: 225px;
+	margin-bottom: 155px;
+}
+
+.error__inner h2 {
+	font-size: 64px;
+	text-transform: uppercase;
+}
+
+.error__inner h1 {
+	font-size: 300px;
+}

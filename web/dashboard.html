@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style/css/main-style.css">
+	<link rel="stylesheet" href="style/css/dashboard.css">
+	<link rel="stylesheet" href="style/css/admin.css">
+	<title>MiniCloud - Files</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<img src="style/icons/LOGO.png" alt="" class="logo">
+				<img src="style/icons/LOGO_MINI.png" alt="" class="logo logo-mini">
+
+				<div class="burger" onclick="burgerActive()">
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="nav__part">
+		<div class="container">
+			<div class="nav__part__inner">
+				<div class="filter">
+					<h1>Filter</h1>
+					<img src="style/icons/filter.svg" alt="" class="filter__icon">
+				</div>
+				<div class="search">
+					<input type="text" name="search" class="search__input" placeholder="Search">
+					<img src="style/icons/search.svg" alt="" class="search__icon" onclick="focusSearch()">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="files__part">
+		<div class="container">
+			<div class="files__part__inner" id="files-private-container">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<h1 id="files-public-label">Public files:</h1>
+	</div>
+
+	<div class="files__part">
+		<div class="container">
+			<div class="files__part__inner" id="files-public-container">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="burger__frame" onclick="hideBurger(event)">
+		<div class="burger__menu">
+			<div class="burger__menu__inner">
+				<div class="profile">
+					<img src="/profile?get=picture" alt="" class="profile__img">
+					<h1>Антон Дяговченко</h1>
+				</div>
+				<h2>12/15 Gb Occupied</h2>
+				<div class="burger__element">
+					<img src="style/icons/settings.png" alt="" class="burger__element__icon">
+					<h1>Profile settings</h1>
+				</div>
+				<div class="bottom__element">
+					<a href="/logout"><img src="style/icons/logout.svg" alt="" class="bottom__element__icon"></a>
+					<img src="style/icons/moon.svg" alt="" class="bottom__element__icon">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="add__btn__container" onclick="uploadFile()">
+		<img src="style/icons/plus.svg" alt="" class="add__btn">
+	</div>
+
+	<ul class="add__context context">
+		<li id="add__file" onclick="hideAddContext(); uploadFile();">Upload Files</li>
+	</ul>
+
+	<ul class="file__context context">
+		<li id="download__file" onclick="hideAddContext(); downloadFile()">Save</li>
+		<li id="delete__file" onclick="hideAddContext(); deleteFile();">Delete</li>
+		<li id="rename__file" onclick="hideAddContext(); renameFile();">Rename</li>
+		<li id="fav__file" onclick="hideAddContext(); favFile();">Add to favourite</li>
+		<li id="public__file" onclick="hideAddContext(); publicFile();">Make public</li>
+	</ul>
+
+	<div class="fields__frame delete-warn" onmousedown=" hideFields(event)">
+		<div class="fields">
+			<div class="fields__inner">
+				<h2>Are you sure?</h2>
+				<button onclick="deleteFile(id)" class="fields__btn">Yes, sakujo!</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="fields__frame space-warn" onmousedown=" hideFields(event)">
+		<div class="fields">
+			<div class="fields__inner">
+				<h2>You're out of space!</h2>
+				<button onclick="hideSpaceWarn()" class="fields__btn">F**k!</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="fields__frame rename-field" onmousedown=" hideFields(event)">
+		<div class="fields">
+			<div class="fields__inner">
+				<form onsubmit="renameFile()" class="fields__form">
+					<input type="text" name="name" class="fields__input" placeholder="New name"><br>
+					<button type="submit" class="fields__btn">Rename</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<input type="file" name="files" id="file-input" style="display: none;" multiple>
+	<script src="style/js/dashboard.js" defer></script>
+</body>
+</html>
